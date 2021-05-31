@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit page</title>
+    <link rel="stylesheet" href="css/edit_styles.css" />
+</head>
+
+<body>
+    <div class="hero">
+        <form id="edit__form" class="form edit__form">
+            <h3 class="edit__form__title">Edit insurance</h3>
+            <label for="" class="edit__label">Insurance Company</label>
+            <input type="text" id="company__input" class="input edit__label">
+            <label for="" class="edit__label">Monthly payment in UAH</label>
+            <input type="number" id="payment__input" class="input edit__label">
+            <label for="" class="edit__label">Customer's name</label>
+            <input type="text" id="customer__input" class="input edit__label">
+            <label for="" class="edit__label">Insurance's compensation in UAH</label>
+            <input type="number" id="compensation__input" class="input edit__label">
+            <label for="" class="edit__label">Insurance's duration in years</label>
+            <input type="number" id="duration__input" class="input edit__label">
+            <label for="" class="edit__label">Customer's immunity level</label>
+            <input type="text" id="immunity__input" class="input create__input">
+            <button id="edit__button" type="submit" class="btn btn-yellow">
+                Edit
+            </button>
+        </form>
+    </div>
+    <div id="modal" class="modal"></div>
+    <script type="module" src="./js/manage_edit.js"></script>
+</body>
+
+</html>

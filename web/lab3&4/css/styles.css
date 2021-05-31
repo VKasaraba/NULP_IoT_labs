@@ -1,0 +1,79 @@
+@import "./modal_window.css";
+@import "./normalize.min.css";
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.inner__hero, .find__form {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+.create__form, .edit__form {
+    display: none;
+}
+
+.functional {
+    margin-left: 5vw;
+}
+
+.main__title {
+    text-align: center;
+}
+
+.all_insurances {
+    width: 20vw;
+    margin-right: 10vw;
+}
+
+.insurance__img {
+    max-width: 35vw;
+    max-height: 30vh;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header__nav {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 13.5vw;
+}
+
+.header__nav-item{
+    margin-right: 6vw;
+    font-size: 1rem;
+    color: darkblue;
+}
+
+.btn {
+    border-radius:1.7rem;
+    color: white;
+    font-weight: 500;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    min-width: 8rem;
+}
+
+.btn-green {
+    background-color:#44c767;
+    border: 0.1rem solid #33ac54;
+}
+
+.btn-yellow{
+    background-color: #c7be44;
+    border: 0.1rem solid #a4ac33;
+}
+
+.btn-red{
+    background-color: #ca3434;
+    border: 0.1rem solid #ac3333;
+}

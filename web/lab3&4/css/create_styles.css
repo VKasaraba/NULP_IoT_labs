@@ -1,0 +1,31 @@
+@import "./styles.css";
+
+.create__form {
+    display: block;
+}
+
+.create__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create__form__title {
+    font-size: 4rem;
+    color: rgb(19, 87, 2);
+}
+
+.create__label {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.btn-green {
+    padding: 1rem 1.5rem;
+    margin: 4.5rem 0;
+}
+
+.input {
+    border-radius: 20px;
+    border: 1px solid #2d9fd9;
+    height: 4vh;
+}

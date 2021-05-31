@@ -1,0 +1,123 @@
+#Question 1
+USE labor_sql;
+SELECT model, speed
+FROM pc
+WHERE price BETWEEN 400 AND 600
+ORDER BY hd;
+
+
+#Question 2
+SELECT date
+FROM pass_in_trip
+WHERE place RLIKE '1[a-z]';
+
+
+#Question 3
+SELECT product.maker, product.model, pc.price
+FROM product LEFT JOIN pc ON pc.model = product.model
+WHERE product.type = 'PC';
+
+
+#Question 4
+SELECT distinct maker
+FROM product
+WHERE product.type = 'PC' and product.model NOT IN (SELECT model FROM pc);
+
+
+
+#Question 5
+SELECT distinct maker FROM product JOIN printer ON product.model = printer.model;
+
+SELECT * FROM product JOIN pc ON product.model = pc.model;
+
+SELECT distinct maker
+FROM product JOIN pc ON product.model = pc.model
+WHERE product.maker in (SELECT distinct product.maker FROM product JOIN printer ON product.model = printer.model)
+AND ram = (SELECT MIN(RAM) FROM product JOIN pc ON product.model = pc.model
+WHERE product.maker in (SELECT distinct product.maker FROM product JOIN printer ON product.model = printer.model));
+
+
+
+#Question 6
+SELECT DATE_FORMAT(date, '%d.%m.%Y')
+FROM battles;
+
+
+
+#Question 7 
+SELECT * 
+FROM pass_in_trip;
+
+SELECT * 
+FROM trip;
+
+SELECT *
+FROM trip RIGHT JOIN pass_in_trip ON trip.trip_no = pass_in_trip.trip_no
+WHERE town_from = 'London';
+
+SELECT DATE_FORMAT(date, '%Y-%m-%d') as date, COUNT(DATE_FORMAT(date, '%Y-%m-%d')) as count
+FROM trip RIGHT JOIN pass_in_trip ON trip.trip_no = pass_in_trip.trip_no
+WHERE town_from = 'London'
+GROUP BY(DATE_FORMAT(date, '%Y-%m-%d'));
+
+
+
+#Question 8
+SELECT *
+FROM ships;
+
+SELECT *
+FROM classes;
+
+SELECT *
+FROM outcomes;
+
+SELECT ship, displacement, numGuns
+FROM (outcomes JOIN ships ON outcomes.ship = ships.name) JOIN classes ON ships.class = classes.class
+WHERE battle = 'Guadalcanal';
+
+
+
+
+#Question 9
+SELECT *
+FROM income_o;
+
+SELECT *
+FROM outcome_o;
+
+SELECT income_o.point, income_o.date, income_o.inc, outcome_o.out
+FROM income_o LEFT JOIN outcome_o on income_o.date = outcome_o.date and income_o.point = outcome_o.point
+UNION
+SELECT outcome_o.point, outcome_o.date, income_o.inc, outcome_o.out
+FROM income_o RIGHT JOIN outcome_o on income_o.date = outcome_o.date and outcome_o.point =  outcome_o.point;
+  
+ 
+SELECT income_o.point, income_o.date, 
+CASE WHEN income_o.inc is NULL THEN 0 ELSE income_o.inc END AS income, 
+CASE WHEN outcome_o.out is NULL THEN 0 ELSE outcome_o.out END AS outcome
+FROM income_o LEFT JOIN outcome_o on income_o.date = outcome_o.date and income_o.point = outcome_o.point
+UNION
+SELECT outcome_o.point, outcome_o.date, 
+CASE WHEN income_o.inc is NULL THEN 0 ELSE income_o.inc END AS income, 
+CASE WHEN outcome_o.out is NULL THEN 0
+ELSE outcome_o.out
+END AS outcome
+FROM income_o RIGHT JOIN outcome_o on income_o.date = outcome_o.date and outcome_o.point =  outcome_o.point;
+
+
+#Question 10
+SELECT *
+FROM ships;
+
+SELECT *
+FROM outcomes;
+
+SELECT name
+FROM (
+SELECT name 
+FROM ships
+UNION
+SELECT ship
+FROM outcomes) as ships_outcomes
+WHERE name LIKE '% %';

@@ -1,0 +1,30 @@
+@import "./styles.css";
+.edit__form {
+    display: block;
+}
+
+.edit__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit__form__title {
+    font-size: 4rem;
+    color: rgb(148, 134, 9);
+}
+
+.edit__label {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.btn-yellow {
+    padding: 1rem 1.5rem;
+    margin: 4.5rem 0;
+}
+
+.input {
+    border-radius: 20px;
+    border: 1px solid #2d9fd9;
+    height: 4vh;
+}

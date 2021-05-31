@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- UUID library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.2.0/uuid.min.js"></script>
+</head>
+
+
+<body>
+    <header class="container header">
+        <ul class="header__nav">
+            <li class="header__nav-item"><a target="_blank" href="./create_page.html" class="header__nav-item-link">Open Create Page</a></li>
+            <li class="header__nav-item"><a target="_blank" href="./edit_page.html" class="header__nav-item-link">Open Edit Page</a></li>
+        </ul>
+    </header>
+    <div class="container hero">
+        <div class="functional">
+            <div class="inner__hero manage">
+                <h2 class="manage__title">Manage insurances</h2>
+                <form class="find__form">
+                    <label class="search__label">Find insurance</label>
+                    <input id="find__input" type="text">
+                    <div class="find__form__buttons">
+                        <button id="find__button" type="button" class="btn btn-green">
+                            Find
+                        </button>
+                        <button id="cancel__button" type="button" class="btn btn-red">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+                <div class="inner__hero sort">
+                    <h3 class="sort_header">Sort by monthly payment</h3>
+                    <button id="sort__button" type="button" class="btn btn-green">
+                        Sort
+                    </button>
+                </div>
+                <div class="inner__hero count">
+                    <h3 class="count__header">Count total monthly expences</h3>
+                    <button id="count__button" type="button" class="btn btn-green">
+                        Count
+                    </button>
+                    <p id="count__total" class="count__total"></p>
+                </div>
+            </div>
+            <div class="inner__hero other__operations">
+                <button id="open__create__button" type="button" class="btn btn-yellow">
+                    Open Create Form
+                </button>
+                <button id="open__edit__button" type="button" class="btn btn-yellow">
+                    Open Edit Form
+                </button>
+            </div>
+            <div class="inner__hero">
+                <form id= "create__form" class="form create__form">
+                    <h3 class="create__form__title">Create insurance</h3>
+                    <div>
+                        <label for="company__input" class="create__label">Insurance Company</label>
+                        <input type="text" id="company__input" class="input create__input">
+                    </div>
+                    <div>
+                        <label for="payment__input" class="create__label">Monthly payment</label>
+                        <input type="number" id="payment__input" class="input create__input">
+                    </div>
+                    <button id="submit__button" type="submit" class="btn btn-green">
+                        Submit
+                    </button>
+                </form>
+                <form id="edit__form" class="form edit__form">
+                    <h3 class="edit__form__title">Edit insurance</h3>
+                    <label for="edit__company__input" class="edit__label">Insurance Company</label>
+                    <input type="text" id="edit__company__input" class="input edit__input">
+                    <label for="edit__payment__input" class="edit__label">Monthly payment</label>
+                    <input type="number" id="edit__payment__input" class="input edit__input">
+                    <button id="edit__button" type="submit" class="btn btn-green">
+                        Edit
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div id="items__container" class="all_insurances">
+        </div>
+    </div>
+    <div id="modal" class="modal"></div>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+    
+</html>

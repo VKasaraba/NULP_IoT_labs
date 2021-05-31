@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header__nav ul {
+    display: flex;
+    width: 700px;
+    justify-content: flex-end;
+}
+
+.header__nav ul li:first-child {
+    margin-right: auto;
+}
+
+.header__nav__item {
+    font-weight: 600;
+    font-size: 11px;
+    margin-right: 47px;
+}
+
+.header__button {
+    width: 120px;
+    height: 35px;
+    border: 2px solid #1943EF;
+    border-radius: 33.9597px;
+    background-color: white;
+    color: #1943EF;
+    font-weight: 600;
+    font-size: 11px;
+}
